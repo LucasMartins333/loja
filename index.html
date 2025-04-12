@@ -3,17 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <title>Minha Loja</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #f5f7fa, #c3cfe2);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 90%;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: block;
+      margin: 10px auto;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s;
+      text-decoration: none;
+      color: white;
+    }
+
+    .btn-compra { background-color: #28a745; }
+    .btn-compra:hover { background-color: #218838; }
+
+    .btn-whats { background-color: #25D366; }
+    .btn-whats:hover { background-color: #1ebe5b; }
+
+    .btn-discord { background-color: #5865F2; }
+    .btn-discord:hover { background-color: #4e5ad4; }
+  </style>
 </head>
 <body>
-  <h1>Bem-vindo à minha loja!</h1>
-  <p>Produto top aqui. Compre agora:</p>
+  <div class="container">
+    <h1>Bem-vindo à minha loja!</h1>
+    <p>Produto top aqui. Compre agora:</p>
 
-  <a href="https://seulinkdepagamento.com" target="_blank">
-    <button>Comprar com cartão</button>
-  </a>
-
-  <br><br>
-  <a href="https://wa.me/SEUNUMERO" target="_blank">Fale comigo no WhatsApp</a><br>
-  <a href="https://discord.gg/SEULINK" target="_blank">Entrar no Discord</a>
+    <a href="https://seulinkdepagamento.com" class="btn btn-compra" target="_blank">💳 Comprar com cartão</a>
+    <a href="https://wa.me/SEUNUMERO" class="btn btn-whats" target="_blank">📲 Fale comigo no WhatsApp</a>
+    <a href="https://discord.gg/SEULINK" class="btn btn-discord" target="_blank">🎮 Entrar no Discord</a>
+  </div>
 </body>
 </html>
