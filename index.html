@@ -28,24 +28,43 @@
       left: 0;
     }
 
-    .container, .contact-section, .demo, .payment-section {
+    .animated-border {
       position: relative;
+      border: 2px solid transparent;
+      border-radius: 16px;
+      z-index: 1;
+    }
+
+    .animated-border::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      z-index: -1;
+      background: linear-gradient(270deg, #00BFFF, #008CFF, #00BFFF);
+      background-size: 600% 600%;
+      border-radius: 16px;
+      animation: borderAnimation 6s linear infinite;
+    }
+
+    @keyframes borderAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container, .contact-section, .demo, .payment-section {
+      background: #fff;
+      color: #000;
       max-width: 360px;
       width: 90%;
       margin: 24px auto;
       padding: 20px;
       text-align: center;
-      border-radius: 16px;
-      color: #000;
-      background: #fff;
-      z-index: 1;
-      border: 3px solid transparent;
-      background-image: 
-        linear-gradient(#fff, #fff), 
-        linear-gradient(120deg, #00f, #00d9ff, #00f);
-      background-origin: border-box;
-      background-clip: content-box, border-box;
-      animation: animate-border 4s linear infinite;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 0.8s ease;
     }
 
     .product-image {
@@ -69,19 +88,19 @@
       font-size: 1.8rem;
       color: #28a745;
       font-weight: bold;
-      margin: 10px 0 4px;
+      margin: 10px 0 6px;
     }
 
-    .promocao-text {
-      font-size: 1rem;
-      color: #ffc107;
+    .promo {
+      font-size: 0.95rem;
+      color: gold;
       font-weight: bold;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
-    .descricao-extra {
-      font-size: 0.85rem;
-      color: #666;
+    .info-extra {
+      font-size: 0.8rem;
+      color: #333;
     }
 
     .email-box {
@@ -160,18 +179,6 @@
       margin-top: 10px;
     }
 
-    @keyframes animate-border {
-      0% {
-        background-position: 0% 50%, 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%, 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%, 0% 50%;
-      }
-    }
-
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -197,25 +204,25 @@
 <body>
   <div id="particles-js"></div>
 
-  <div class="container">
-    <img class="product-image" src="https://cdn.discordapp.com/attachments/1349832525031411742/1360847914603118643/Novo_Projeto_4.png" alt="Produto VIP Blood Strike">
+  <div class="container animated-border">
+    <img class="product-image" src="https://cdn.discordapp.com/attachments/1349832525031411742/1360847914603118643/Novo_Projeto_4.png" alt="Mod Menu VIP Blood Strike Android">
     <h1>🔥 Produto VIP para Blood Strike</h1>
     <p class="descricao">Ative os melhores modos com apenas um clique!</p>
     <div class="preco">R$ 25,00</div>
-    <div class="promocao-text">🔥 Promoção</div>
-    <p class="descricao-extra">Você só paga uma vez e tem todas as atualizações gratuitas. Aproveitem! Cheat permanente por apenas R$ 25!</p>
+    <div class="promo">🔥 Promoção</div>
+    <div class="info-extra">Você só paga uma vez e tem todas as atualizações gratuitas. Aproveitem, cheat permanente por R$ 25!</div>
   </div>
 
-  <div class="contact-section">
+  <div class="contact-section animated-border">
     <h2>📞 Meios de Contato</h2>
-    <p style="font-size: 0.9rem; margin-bottom: 10px; color: #444;">Suporte 24 horas. Atendimento rápido via WhatsApp e Discord.</p>
+    <p style="margin-bottom: 10px;">✅ Suporte 24 horas • Atendimento rápido • Garantia de qualidade</p>
     <a href="https://wa.link/4mqmft" target="_blank" class="btn btn-whats">📲 WhatsApp</a>
     <a href="https://discord.gg/BsKTCm4dEr" target="_blank" class="btn btn-discord">🎮 Discord</a>
   </div>
 
   <div class="scroll-note">⬇️ Role para baixo para comprar ⬇️</div>
 
-  <div class="demo">
+  <div class="demo animated-border">
     <h2>🎥 Demonstração</h2>
     <video controls>
       <source src="https://cdn.discordapp.com/attachments/1242746665794928641/1309637432928505887/Screenrecorder-2024-11-22-18-47-43-129.mp4" type="video/mp4">
@@ -233,7 +240,7 @@
     </div>
   </div>
 
-  <div class="payment-section">
+  <div class="payment-section animated-border">
     <h2>💳 Realizar Pagamento</h2>
     <button class="btn btn-whats" onclick="document.querySelector('.pix-options').style.display = 'block'">🛒 Comprar Agora</button>
     <div class="pix-options">
