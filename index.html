@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <title>Minha Loja - Produto VIP</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(120deg, #e0eafc, #cfdef3);
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -18,60 +19,77 @@
     }
 
     .container {
-      background: white;
+      background: #fff;
+      color: #333;
       padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-      max-width: 480px;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
       width: 100%;
       text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .container:hover {
+      transform: scale(1.02);
     }
 
     .product-image {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 15px;
       margin-bottom: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .product-image:hover {
+      transform: scale(1.03);
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #111;
       margin-bottom: 10px;
     }
 
     .descricao {
       font-size: 1.1rem;
-      margin-bottom: 15px;
+      color: #555;
+      margin-bottom: 20px;
     }
 
     .preco {
-      font-size: 2.3rem;
+      font-size: 2.5rem;
       color: #28a745;
-      font-weight: bold;
-      margin: 10px 0 25px;
+      font-weight: 700;
+      margin: 15px 0 25px;
     }
 
     .email-box {
-      background: #f0f0f0;
-      padding: 12px;
-      margin: 10px 0 30px;
-      border-radius: 8px;
-      font-weight: bold;
+      background: #f7f7f7;
+      padding: 14px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+      font-weight: 600;
       font-size: 1.1rem;
+      word-break: break-all;
     }
 
     .btn {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin: 10px auto;
-      padding: 14px 20px;
-      font-size: 1rem;
+      padding: 15px;
+      font-size: 1.05rem;
+      font-weight: 600;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
       width: 100%;
-      transition: background 0.3s;
+      transition: all 0.3s ease;
       text-decoration: none;
-      color: white;
+      color: #fff;
     }
 
     .btn-whats {
@@ -80,6 +98,7 @@
 
     .btn-whats:hover {
       background-color: #1ebe5b;
+      transform: translateY(-2px);
     }
 
     .btn-discord {
@@ -88,22 +107,33 @@
 
     .btn-discord:hover {
       background-color: #4e5ad4;
+      transform: translateY(-2px);
+    }
+
+    .btn i {
+      margin-right: 10px;
+      font-size: 1.3rem;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="https://cdn.discordapp.com/attachments/1309691694303678614/1351351505608769618/Screenshot_2025-03-17-11-13-31-972_com.dualspace.multispace.android.jpg?ex=67fb0529&is=67f9b3a9&hm=959b7d61094c0efefff3fc745bdd6a9c74b2386d33d853348922f0a041b53843&" alt="Produto" class="product-image">
+    <img src="https://cdn.discordapp.com/attachments/1309691694303678614/1351351505608769618/Screenshot_2025-03-17-11-13-31-972_com.dualspace.multispace.android.jpg" alt="Produto VIP Blood Strike" class="product-image">
 
     <h1>🔥 Produto VIP para Blood Strike</h1>
-    <p class="descricao">Ative os melhores modos com um clique!</p>
+    <p class="descricao">Ative os melhores modos com apenas um clique!</p>
     <div class="preco">R$ 25,00</div>
 
-    <p>Pagamento via Pix (e-mail chave):</p>
+    <p><strong>Pagamento via Pix</strong> (e-mail chave):</p>
     <div class="email-box">wendellxiter@gmail.com</div>
 
-    <a href="https://wa.link/4mqmft" class="btn btn-whats" target="_blank">📲 Fale comigo no WhatsApp</a>
-    <a href="https://discord.gg/BsKTCm4dEr" class="btn btn-discord" target="_blank">🎮 Entrar no Discord</a>
+    <a href="https://wa.link/4mqmft" class="btn btn-whats" target="_blank">
+      <i>📲</i> Fale comigo no WhatsApp
+    </a>
+
+    <a href="https://discord.gg/BsKTCm4dEr" class="btn btn-discord" target="_blank">
+      <i>🎮</i> Entrar no Discord
+    </a>
   </div>
 </body>
 </html>
