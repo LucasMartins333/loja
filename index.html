@@ -157,6 +157,18 @@
       background: #0056b3;
     }
 
+    .pix-options {
+      display: none;
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    .pix-options img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
     @media (max-width: 480px) {
       .container {
         margin: 20px auto;
@@ -178,29 +190,23 @@
 
   <div id="particles-js"></div>
 
-  <!-- NOTIFICAÇÃO -->
   <div class="scroll-notify">⬇️ ROLE PARA BAIXO PARA COMPRAR ⬇️</div>
 
-  <!-- PRODUTO -->
   <div class="container">
     <img class="product-image" src="https://cdn.discordapp.com/attachments/1349832525031411742/1360847914603118643/Novo_Projeto_4.png" alt="Produto VIP Blood Strike">
-
     <h1>🔥 Produto VIP para Blood Strike</h1>
     <p class="descricao">Ative os melhores modos com apenas um clique!</p>
     <div class="preco">R$ 25,00</div>
-
     <p><strong>Pagamento via Pix</strong> (e-mail chave):</p>
     <div class="email-box">wendellxiter@gmail.com</div>
   </div>
 
-  <!-- CONTATO -->
   <div class="container">
     <h2>📞 Meios de Contato</h2>
     <a href="https://wa.link/4mqmft" target="_blank" class="btn btn-whats">📲 WhatsApp</a>
     <a href="https://discord.gg/BsKTCm4dEr" target="_blank" class="btn btn-discord">🎮 Discord</a>
   </div>
 
-  <!-- DEMONSTRAÇÃO -->
   <div class="container demo">
     <h2>🎥 Demonstração</h2>
     <video controls>
@@ -225,12 +231,18 @@
     </div>
   </div>
 
-  <!-- BOTÃO PAGAMENTO -->
   <div class="container">
-    <a href="https://wa.link/4mqmft" target="_blank" class="btn btn-pagamento">💸 PAGAR AGORA VIA WHATSAPP</a>
+    <button class="btn btn-pagamento" onclick="document.querySelector('.pix-options').style.display='block'; window.scrollBy(0, 300);">
+      💸 PAGAR AGORA
+    </button>
+    <div class="pix-options">
+      <p><strong>Opção 1: E-mail Pix</strong></p>
+      <div class="email-box">wendellxiter@gmail.com</div>
+      <p><strong>Opção 2: Escaneie o QR Code</strong></p>
+      <img src="https://cdn.discordapp.com/attachments/1183622870958624838/1360852309927788604/qrcode-pix.png" alt="QR Code Pix">
+    </div>
   </div>
 
-  <!-- PARTICULAS -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
     particlesJS("particles-js", {
