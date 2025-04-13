@@ -16,6 +16,7 @@
       font-family: 'Segoe UI', sans-serif;
       background: #000;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     #particles-js {
@@ -30,55 +31,56 @@
     .container {
       background: #fff;
       color: #000;
-      max-width: 400px;
+      max-width: 360px;
       width: 90%;
-      margin: 40px auto;
+      margin: 24px auto;
       border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
       text-align: center;
+      animation: fadeInUp 0.8s ease;
     }
 
     .product-image {
       width: 100%;
       border-radius: 12px;
-      margin-bottom: 20px;
-    }
-
-    h1, h2 {
-      font-size: 1.6rem;
-      margin-bottom: 12px;
-    }
-
-    .descricao {
-      font-size: 1rem;
-      color: #444;
       margin-bottom: 16px;
     }
 
+    h1 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .descricao {
+      font-size: 0.95rem;
+      color: #444;
+      margin-bottom: 14px;
+    }
+
     .preco {
-      font-size: 2rem;
+      font-size: 1.5rem;
       color: #28a745;
       font-weight: bold;
-      margin: 12px 0 20px;
+      margin: 10px 0 18px;
     }
 
     .email-box {
       background: #222;
       color: #fff;
-      padding: 12px;
+      padding: 10px;
       border-radius: 8px;
       font-weight: bold;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .btn {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 8px;
-      padding: 14px;
-      font-size: 1rem;
+      gap: 6px;
+      padding: 12px;
+      font-size: 0.9rem;
       font-weight: 600;
       border: none;
       border-radius: 8px;
@@ -86,157 +88,140 @@
       text-decoration: none;
       color: white;
       width: 100%;
-      margin-bottom: 12px;
-      transition: background 0.3s;
+      margin-bottom: 10px;
+      transition: background 0.3s, transform 0.2s;
     }
 
-    .btn-whats {
-      background-color: #25D366;
+    .btn:hover {
+      transform: scale(1.03);
     }
 
-    .btn-whats:hover {
-      background-color: #1ebe5b;
+    .btn-whats { background-color: #25D366; }
+    .btn-whats:hover { background-color: #1ebe5b; }
+
+    .btn-discord { background-color: #5865F2; }
+    .btn-discord:hover { background-color: #4e5ad4; }
+
+    .section-title {
+      text-align: center;
+      margin: 32px 0 10px;
+      font-size: 1.2rem;
+      color: #fff;
+      animation: fadeIn 1s ease;
     }
 
-    .btn-discord {
-      background-color: #5865F2;
-    }
-
-    .btn-discord:hover {
-      background-color: #4e5ad4;
-    }
-
-    .demo {
-      margin-top: 40px;
-      padding-top: 20px;
+    .demo, .contact-section, .payment-section {
+      max-width: 360px;
+      width: 90%;
+      margin: 24px auto;
       background: #fff;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 1s ease;
+    }
+
+    .demo h2, .contact-section h2, .payment-section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 14px;
+      color: #111;
     }
 
     video {
       width: 100%;
       border-radius: 12px;
-      margin-bottom: 20px;
     }
 
-    .functions {
+    .func-list {
       text-align: left;
-      margin-top: 20px;
+      font-size: 0.9rem;
+      margin-top: 10px;
+      color: #333;
     }
 
-    .functions ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .functions li {
-      padding: 6px 0;
-      border-bottom: 1px solid #ccc;
-    }
-
-    .scroll-notify {
-      background: #ffcc00;
-      color: #000;
+    .scroll-note {
       text-align: center;
-      padding: 12px;
-      font-weight: bold;
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-      0% { opacity: 1; }
-      50% { opacity: 0.6; }
-      100% { opacity: 1; }
-    }
-
-    .btn-pagamento {
-      background: #007bff;
-      margin-top: 20px;
-    }
-
-    .btn-pagamento:hover {
-      background: #0056b3;
+      color: #fff;
+      margin: 20px;
+      font-size: 0.95rem;
+      animation: pulse 2s infinite;
     }
 
     .pix-options {
       display: none;
-      margin-top: 16px;
-      text-align: center;
+      margin-top: 10px;
     }
 
     .pix-options img {
-      max-width: 100%;
+      width: 100%;
       border-radius: 8px;
       margin-top: 10px;
     }
 
-    @media (max-width: 480px) {
-      .container {
-        margin: 20px auto;
-        padding: 20px 16px;
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
       }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-      .btn {
-        font-size: 0.95rem;
-        padding: 12px;
-      }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-      .preco {
-        font-size: 1.6rem;
-      }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
     }
   </style>
 </head>
 <body>
-
   <div id="particles-js"></div>
-
-  <div class="scroll-notify">⬇️ ROLE PARA BAIXO PARA COMPRAR ⬇️</div>
 
   <div class="container">
     <img class="product-image" src="https://cdn.discordapp.com/attachments/1349832525031411742/1360847914603118643/Novo_Projeto_4.png" alt="Produto VIP Blood Strike">
     <h1>🔥 Produto VIP para Blood Strike</h1>
     <p class="descricao">Ative os melhores modos com apenas um clique!</p>
     <div class="preco">R$ 25,00</div>
-    <p><strong>Pagamento via Pix</strong> (e-mail chave):</p>
-    <div class="email-box">wendellxiter@gmail.com</div>
+    <div class="email-box">Chave Pix: wendellxiter@gmail.com</div>
   </div>
 
-  <div class="container">
+  <div class="contact-section">
     <h2>📞 Meios de Contato</h2>
     <a href="https://wa.link/4mqmft" target="_blank" class="btn btn-whats">📲 WhatsApp</a>
     <a href="https://discord.gg/BsKTCm4dEr" target="_blank" class="btn btn-discord">🎮 Discord</a>
   </div>
 
-  <div class="container demo">
+  <div class="scroll-note">⬇️ Role para baixo para comprar ⬇️</div>
+
+  <div class="demo">
     <h2>🎥 Demonstração</h2>
     <video controls>
       <source src="https://cdn.discordapp.com/attachments/1242746665794928641/1309637432928505887/Screenrecorder-2024-11-22-18-47-43-129.mp4" type="video/mp4">
-      Seu navegador não suporta a reprodução de vídeo.
+      Seu navegador não suporta vídeo.
     </video>
-
-    <div class="functions">
-      <h3>🛠️ Funções do Mod Menu:</h3>
+    <div class="func-list">
       <ul>
-        <li>Aimbot</li>
-        <li>No Recoil</li>
-        <li>AimFOV Personalizado</li>
-        <li>Speed Hack</li>
-        <li>WallHack</li>
-        <li>Radar Hack</li>
-        <li>Auto Headshot</li>
-        <li>Skin Unlock</li>
-        <li>Modo Fantasma</li>
-        <li>Anti-Ban</li>
+        <li>✅ Aimbot</li>
+        <li>✅ Aim FOV</li>
+        <li>✅ Sem Recuo</li>
+        <li>✅ Wallhack</li>
+        <li>✅ ESP inimigos</li>
+        <li>✅ Modos automáticos</li>
       </ul>
     </div>
   </div>
 
-  <div class="container">
-    <button class="btn btn-pagamento" onclick="document.querySelector('.pix-options').style.display='block'; window.scrollBy(0, 300);">
-      💸 PAGAR AGORA
-    </button>
+  <div class="payment-section">
+    <h2>💳 Realizar Pagamento</h2>
+    <button class="btn btn-whats" onclick="document.querySelector('.pix-options').style.display = 'block'">🛒 Comprar Agora</button>
     <div class="pix-options">
-      <p><strong>Opção 1: E-mail Pix</strong></p>
+      <p><strong>Opção 1: Chave Pix</strong></p>
       <div class="email-box">wendellxiter@gmail.com</div>
       <p><strong>Opção 2: Escaneie o QR Code</strong></p>
       <img src="https://cdn.discordapp.com/attachments/1183622870958624838/1360852309927788604/qrcode-pix.png" alt="QR Code Pix">
@@ -266,7 +251,7 @@
           random: false,
           straight: false,
           out_mode: "out",
-          bounce: false
+          bounce: false,
         }
       },
       interactivity: {
@@ -284,6 +269,5 @@
       retina_detect: true
     });
   </script>
-
 </body>
 </html>
