@@ -6,32 +6,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
+      background-color: #000;
       color: #fff;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
       padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
     }
 
     .container {
-      background: #fff;
-      color: #333;
+      position: relative;
+      z-index: 1;
+      background: #111;
+      color: #fff;
       padding: 30px;
       border-radius: 20px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
       max-width: 500px;
       width: 100%;
       text-align: center;
-      transition: transform 0.3s;
-    }
-
-    .container:hover {
-      transform: scale(1.02);
     }
 
     .product-image {
@@ -39,6 +50,7 @@
       border-radius: 15px;
       margin-bottom: 20px;
       transition: transform 0.3s;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     }
 
     .product-image:hover {
@@ -48,13 +60,13 @@
     h1 {
       font-size: 1.9rem;
       font-weight: 700;
-      color: #111;
+      color: #fff;
       margin-bottom: 10px;
     }
 
     .descricao {
       font-size: 1.1rem;
-      color: #555;
+      color: #ccc;
       margin-bottom: 20px;
     }
 
@@ -66,13 +78,15 @@
     }
 
     .email-box {
-      background: #f7f7f7;
+      background: #222;
       padding: 14px;
       margin-bottom: 25px;
       border-radius: 10px;
       font-weight: 600;
       font-size: 1.1rem;
       word-break: break-all;
+      color: #fff;
+      border: 1px solid #333;
     }
 
     .btn {
@@ -117,6 +131,8 @@
   </style>
 </head>
 <body>
+  <div id="particles-js"></div>
+
   <div class="container">
     <img src="https://cdn.discordapp.com/attachments/1309691694303678614/1351351505608769618/Screenshot_2025-03-17-11-13-31-972_com.dualspace.multispace.android.jpg" alt="Produto VIP Blood Strike" class="product-image">
 
@@ -135,5 +151,54 @@
       <i>🎮</i> Entrar no Discord
     </a>
   </div>
+
+  <!-- Particles.js script -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#ffffff"
+        },
+        "shape": {
+          "type": "circle"
+        },
+        "opacity": {
+          "value": 0.5
+        },
+        "size": {
+          "value": 3
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 3
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
 </body>
 </html>
