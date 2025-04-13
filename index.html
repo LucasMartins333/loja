@@ -28,7 +28,33 @@
       left: 0;
     }
 
-    .container {
+    .animated-border {
+      position: relative;
+      z-index: 1;
+    }
+
+    .animated-border::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #00f0ff, #00ff94, #f8ff00, #ff0099, #00f0ff);
+      background-size: 400% 400%;
+      animation: borderAnimation 6s linear infinite;
+      z-index: -1;
+      border-radius: 20px;
+      filter: blur(3px);
+    }
+
+    @keyframes borderAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container, .demo, .contact-section, .payment-section {
       background: #fff;
       color: #000;
       max-width: 360px;
@@ -59,10 +85,21 @@
     }
 
     .preco {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       color: #28a745;
       font-weight: bold;
-      margin: 10px 0 18px;
+      margin: 10px 0 8px;
+    }
+
+    .promocao {
+      font-size: 0.95rem;
+      color: #FFD700;
+      margin-bottom: 4px;
+    }
+
+    .info-extra {
+      font-size: 0.85rem;
+      color: #666;
     }
 
     .email-box {
@@ -110,23 +147,6 @@
       animation: fadeIn 1s ease;
     }
 
-    .demo, .contact-section, .payment-section {
-      max-width: 360px;
-      width: 90%;
-      margin: 24px auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-      animation: fadeInUp 1s ease;
-    }
-
-    .demo h2, .contact-section h2, .payment-section h2 {
-      font-size: 1.2rem;
-      margin-bottom: 14px;
-      color: #111;
-    }
-
     video {
       width: 100%;
       border-radius: 12px;
@@ -159,14 +179,8 @@
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes fadeIn {
@@ -182,65 +196,51 @@
 </head>
 <body>
   <div id="particles-js"></div>
- <div class="scroll-note">⬇️ Role para baixo para comprar ⬇️</div>
- <div class="container">
-  <img class="product-image" src="https://cdn.discordapp.com/attachments/1349832525031411742/1360847914603118643/Novo_Projeto_4.png?ex=67fc9be2&is=67fb4a62&hm=49afc737cb6873a7e505ab3f569270803f212cee9cac614181acb6d449bcfaec&" alt="Mod Menu VIP Blood Strike Android">
-  <h1>🔥 Produto VIP para Blood Strike</h1>
-  <p class="descricao">Ative os melhores modos com apenas um clique!</p>
-  
-  <div class="preco-box">
+
+  <div class="container animated-border">
+    <img class="product-image" src="https://cdn.discordapp.com/attachments/1349832525031411742/1360847914603118643/Novo_Projeto_4.png" alt="Mod Menu VIP Blood Strike Android">
+    <h1>🔥 Produto VIP para Blood Strike</h1>
+    <p class="descricao">Ative os melhores modos com apenas um clique!</p>
     <div class="preco">R$ 25,00</div>
-    <div class="promo">🔥 Promoção</div>
-    <div class="atualizacoes">
-      Você só paga uma vez e tem todas as atualizações gratuitas!<br>
-      Aproveite, cheat permanente por apenas <strong>25 reais</strong>!
-    </div>
+    <div class="promocao">🔥 PROMOÇÃO</div>
+    <div class="info-extra">Você só paga uma vez e tem todas as atualizações gratuitas!<br>Aproveite: cheat permanente por apenas 25 reais.</div>
   </div>
-</div>
- <div class="scroll-note">⬇️ Role para baixo para comprar ⬇️</div>
 
-<div class="contact-section">
-  <h2>📞 Meios de Contato</h2>
-  <p style="color: #333; font-size: 0.9rem; margin-bottom: 14px;">
-    Suporte 24 horas por dia ⏰<br>
-    Atendimento rápido via WhatsApp ou Discord 💬
-  </p>
-  <a href="https://wa.link/4mqmft" target="_blank" class="btn btn-whats">📲 WhatsApp</a>
-  <a href="https://discord.gg/BsKTCm4dEr" target="_blank" class="btn btn-discord">🎮 Discord</a>
-</div>
-
+  <div class="contact-section animated-border">
+    <h2>📞 Meios de Contato</h2>
+    <p style="font-size: 0.9rem; color: #444; margin-bottom: 10px;">💬 Suporte 24 horas, atendimento rápido via WhatsApp ou Discord!</p>
+    <a href="https://wa.link/4mqmft" target="_blank" class="btn btn-whats">📲 WhatsApp</a>
+    <a href="https://discord.gg/BsKTCm4dEr" target="_blank" class="btn btn-discord">🎮 Discord</a>
+  </div>
 
   <div class="scroll-note">⬇️ Role para baixo para comprar ⬇️</div>
 
-  <div class="demo">
+  <div class="demo animated-border">
     <h2>🎥 Demonstração</h2>
     <video controls>
-      <source src="https://cdn.discordapp.com/attachments/1242746665794928641/1309637432928505887/Screenrecorder-2024-11-22-18-47-43-129.mp4?ex=67fc31e7&is=67fae067&hm=50c27cfa2ea400a7a6a3a8b398aae28917069cc271ab85c12128d946a9235f3b&" type="video/mp4">
+      <source src="https://cdn.discordapp.com/attachments/1242746665794928641/1309637432928505887/Screenrecorder-2024-11-22-18-47-43-129.mp4" type="video/mp4">
       Seu navegador não suporta vídeo.
     </video>
     <div class="func-list">
       <ul>
-        <li>✅ Silent Aim Evo Pro</li>
-        <li>✅ Aim Lock</li>
+        <li>✅ Aimbot</li>
+        <li>✅ Aim FOV</li>
         <li>✅ Sem Recuo</li>
         <li>✅ Wallhack</li>
         <li>✅ ESP inimigos</li>
-        <li>✅ Magic Bullet</li>
-        <li>✅ Long Slider</li>
         <li>✅ Modos automáticos</li>
-        <li>✅ Muito +</li>
       </ul>
     </div>
   </div>
 
-  <div class="payment-section">
+  <div class="payment-section animated-border">
     <h2>💳 Realizar Pagamento</h2>
     <button class="btn btn-whats" onclick="document.querySelector('.pix-options').style.display = 'block'">🛒 Comprar Agora</button>
     <div class="pix-options">
       <p><strong>Opção 1: Chave Pix</strong></p>
       <div class="email-box">wendellxiter@gmail.com</div>
       <p><strong>Opção 2: Escaneie o QR Code</strong></p>
-      <img src="https://cdn.discordapp.com/attachments/1183622870958624838/1360852309927788604/qrcode-pix.png?ex=67fc9ffa&is=67fb4e7a&hm=db97ed8e5d4663229dfc052e10a25ab588024bd80c9d90c196aa4cd7f92955f6&" alt="QR Code Pix">
+      <img src="https://cdn.discordapp.com/attachments/1183622870958624838/1360852309927788604/qrcode-pix.png" alt="QR Code Pix">
     </div>
   </div>
 
