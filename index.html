@@ -5,7 +5,6 @@
   <title>Produto VIP - Blood Strike</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Reset básico */
     * {
       margin: 0;
       padding: 0;
@@ -19,7 +18,6 @@
       overflow-x: hidden;
     }
 
-    /* Canvas das partículas */
     #particles-js {
       position: fixed;
       width: 100%;
@@ -29,7 +27,6 @@
       left: 0;
     }
 
-    /* Container branco centralizado */
     .container {
       background: #fff;
       color: #000;
@@ -109,7 +106,6 @@
       background-color: #4e5ad4;
     }
 
-    /* Seção de demonstração */
     .demo {
       margin-top: 40px;
       padding-top: 20px;
@@ -125,6 +121,21 @@
     video {
       width: 100%;
       border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    ul.features {
+      text-align: left;
+      margin: 0 auto;
+      max-width: 300px;
+      padding-left: 20px;
+      list-style-type: "✅ ";
+    }
+
+    ul.features li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      color: #222;
     }
 
     @media (max-width: 480px) {
@@ -140,6 +151,10 @@
 
       .preco {
         font-size: 1.6rem;
+      }
+
+      ul.features {
+        padding-left: 15px;
       }
     }
   </style>
@@ -171,19 +186,29 @@
       <source src="https://cdn.discordapp.com/attachments/1242746665794928641/1309637432928505887/Screenrecorder-2024-11-22-18-47-43-129.mp4?ex=67fc31e7&is=67fae067&hm=50c27cfa2ea400a7a6a3a8b398aae28917069cc271ab85c12128d946a9235f3b&" type="video/mp4">
       Seu navegador não suporta a reprodução de vídeo.
     </video>
+
+    <h2>🛠️ Funções do Mod Menu</h2>
+    <ul class="features">
+      <li>Aimbot</li>
+      <li>No Recoil</li>
+      <li>AimFOV Customizado</li>
+      <li>Wallhack</li>
+      <li>Speed Hack</li>
+      <li>ESP Inimigos</li>
+      <li>Auto Headshot</li>
+      <li>Modo Fantasma</li>
+      <li>Anti-Ban</li>
+    </ul>
   </div>
 
-  <!-- Script de partículas -->
+  <!-- Script partículas -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
     particlesJS("particles-js", {
       particles: {
         number: { value: 60, density: { enable: true, value_area: 800 } },
         color: { value: "#00BFFF" },
-        shape: {
-          type: "circle",
-          stroke: { width: 0, color: "#000" },
-        },
+        shape: { type: "circle", stroke: { width: 0, color: "#000" } },
         opacity: { value: 0.5 },
         size: { value: 3 },
         line_linked: {
@@ -200,7 +225,7 @@
           random: false,
           straight: false,
           out_mode: "out",
-          bounce: false,
+          bounce: false
         }
       },
       interactivity: {
