@@ -29,39 +29,23 @@
     }
 
     .container, .contact-section, .demo, .payment-section {
-      background: #fff;
-      color: #000;
+      position: relative;
       max-width: 360px;
       width: 90%;
       margin: 24px auto;
-      border-radius: 16px;
       padding: 20px;
       text-align: center;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-      position: relative;
-    }
-
-    .container::before,
-    .contact-section::before,
-    .demo::before,
-    .payment-section::before {
-      content: "";
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      border-radius: 18px;
-      background: linear-gradient(270deg, #00f, #00d9ff, #00f);
-      background-size: 600% 600%;
-      animation: borderLoop 4s linear infinite;
-      z-index: -1;
-    }
-
-    @keyframes borderLoop {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      border-radius: 16px;
+      color: #000;
+      background: #fff;
+      z-index: 1;
+      border: 3px solid transparent;
+      background-image: 
+        linear-gradient(#fff, #fff), 
+        linear-gradient(120deg, #00f, #00d9ff, #00f);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      animation: animate-border 4s linear infinite;
     }
 
     .product-image {
@@ -85,20 +69,19 @@
       font-size: 1.8rem;
       color: #28a745;
       font-weight: bold;
-      margin: 10px 0 8px;
+      margin: 10px 0 4px;
     }
 
-    .promocao {
+    .promocao-text {
       font-size: 1rem;
-      color: #f1c40f;
+      color: #ffc107;
       font-weight: bold;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
-    .info-extra {
+    .descricao-extra {
       font-size: 0.85rem;
-      color: #444;
-      margin-bottom: 10px;
+      color: #666;
     }
 
     .email-box {
@@ -143,6 +126,7 @@
       margin: 32px 0 10px;
       font-size: 1.2rem;
       color: #fff;
+      animation: fadeIn 1s ease;
     }
 
     video {
@@ -176,6 +160,34 @@
       margin-top: 10px;
     }
 
+    @keyframes animate-border {
+      0% {
+        background-position: 0% 50%, 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%, 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%, 0% 50%;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     @keyframes pulse {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.5; }
@@ -186,17 +198,17 @@
   <div id="particles-js"></div>
 
   <div class="container">
-    <img class="product-image" src="https://cdn.discordapp.com/attachments/1349832525031411742/1360847914603118643/Novo_Projeto_4.png" alt="Mod Menu VIP Blood Strike Android">
+    <img class="product-image" src="https://cdn.discordapp.com/attachments/1349832525031411742/1360847914603118643/Novo_Projeto_4.png" alt="Produto VIP Blood Strike">
     <h1>🔥 Produto VIP para Blood Strike</h1>
     <p class="descricao">Ative os melhores modos com apenas um clique!</p>
     <div class="preco">R$ 25,00</div>
-    <div class="promocao">🎉 Promoção</div>
-    <div class="info-extra">Você só paga uma vez e recebe todas as atualizações gratuitas. Aproveite! Cheat permanente por apenas R$25!</div>
+    <div class="promocao-text">🔥 Promoção</div>
+    <p class="descricao-extra">Você só paga uma vez e tem todas as atualizações gratuitas. Aproveitem! Cheat permanente por apenas R$ 25!</p>
   </div>
 
   <div class="contact-section">
     <h2>📞 Meios de Contato</h2>
-    <p style="font-size: 0.9rem; color: #333; margin-bottom: 10px;">Suporte 24h, atendimento rápido e personalizado!</p>
+    <p style="font-size: 0.9rem; margin-bottom: 10px; color: #444;">Suporte 24 horas. Atendimento rápido via WhatsApp e Discord.</p>
     <a href="https://wa.link/4mqmft" target="_blank" class="btn btn-whats">📲 WhatsApp</a>
     <a href="https://discord.gg/BsKTCm4dEr" target="_blank" class="btn btn-discord">🎮 Discord</a>
   </div>
