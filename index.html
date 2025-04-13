@@ -66,6 +66,31 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
       animation: fadeInUp 0.8s ease;
     }
+.top-banner {
+  width: 100%;
+  background: #000;
+  text-align: center;
+  padding: 12px 0;
+}
+
+.top-banner img {
+  max-width: 280px;
+  width: 80%;
+  height: auto;
+  border-radius: 12px;
+  animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
     .product-image {
       width: 100%;
