@@ -30,23 +30,28 @@
 
     .animated-border {
       position: relative;
-      border: 2px solid transparent;
       border-radius: 16px;
       z-index: 1;
+      overflow: hidden;
     }
 
     .animated-border::before {
       content: "";
       position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 2px;
       background: linear-gradient(270deg, #00BFFF, #008CFF, #00BFFF);
       background-size: 600% 600%;
-      border-radius: 16px;
       animation: borderAnimation 6s linear infinite;
+      border-radius: 16px;
+      z-index: -1;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      -webkit-mask-composite: destination-out;
     }
 
     @keyframes borderAnimation {
@@ -65,32 +70,34 @@
       text-align: center;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
       animation: fadeInUp 0.8s ease;
+      border-radius: 16px;
     }
-.top-banner {
-  width: 100%;
-  background: #000;
-  text-align: center;
-  padding: 12px 0;
-}
 
-.top-banner img {
-  max-width: 280px;
-  width: 80%;
-  height: auto;
-  border-radius: 12px;
-  animation: fadeInDown 1s ease;
-}
+    .top-banner {
+      width: 100%;
+      background: #000;
+      text-align: center;
+      padding: 12px 0;
+    }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    .top-banner img {
+      max-width: 280px;
+      width: 80%;
+      height: auto;
+      border-radius: 12px;
+      animation: fadeInDown 1s ease;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     .product-image {
       width: 100%;
@@ -228,9 +235,10 @@
 </head>
 <body>
   <div id="particles-js"></div>
-<div class="top-banner">
-  <img src="https://cdn.discordapp.com/attachments/1349832525031411742/1360861115117994044/wendellll.png?ex=67fca82d&is=67fb56ad&hm=07530d3bf3a9fb26596d117fb7ddf21c7a660a470b155479ab59d8702d30faf4&" alt="Banner Wendell">
-</div>
+
+  <div class="top-banner">
+    <img src="https://cdn.discordapp.com/attachments/1349832525031411742/1360861115117994044/wendellll.png" alt="Banner Wendell">
+  </div>
 
   <div class="container animated-border">
     <img class="product-image" src="https://cdn.discordapp.com/attachments/1349832525031411742/1360847914603118643/Novo_Projeto_4.png" alt="Mod Menu VIP Blood Strike Android">
