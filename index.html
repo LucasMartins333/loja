@@ -28,47 +28,47 @@
       z-index: 1;
       background: #fff;
       color: #000;
-      padding: 20px;
+      padding: 16px;
       border-radius: 15px;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-      max-width: 400px;
+      max-width: 360px;
       width: 90%;
-      margin: 40px auto;
+      margin: 30px auto;
       text-align: center;
     }
 
     .product-image {
       width: 100%;
       border-radius: 12px;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     }
 
     h1 {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       margin-bottom: 10px;
     }
 
     .descricao {
-      font-size: 1rem;
-      margin-bottom: 15px;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
       color: #333;
     }
 
     .preco {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: bold;
       color: #28a745;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     .email-box {
       background: #f0f0f0;
-      padding: 10px;
-      margin: 10px 0 20px;
+      padding: 8px;
+      margin: 10px 0 16px;
       border-radius: 8px;
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: #000;
       border: 1px solid #ccc;
     }
@@ -76,8 +76,8 @@
     .btn {
       display: block;
       margin: 10px auto;
-      padding: 12px 18px;
-      font-size: 0.95rem;
+      padding: 10px 16px;
+      font-size: 0.9rem;
       border: none;
       border-radius: 8px;
       cursor: pointer;
@@ -103,9 +103,24 @@
       background-color: #4e5ad4;
     }
 
-    @media (min-height: 700px) {
+    /* Responsivo ainda menor */
+    @media (max-width: 380px) {
       .container {
-        margin-top: 80px;
+        padding: 12px;
+        max-width: 320px;
+        margin: 20px auto;
+      }
+
+      h1 {
+        font-size: 1.1rem;
+      }
+
+      .descricao, .email-box, .btn {
+        font-size: 0.85rem;
+      }
+
+      .preco {
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -136,28 +151,13 @@
         color: "#000"
       },
       particles: {
-        number: {
-          value: 50
-        },
-        color: {
-          value: "#00aaff"
-        },
-        shape: {
-          type: "circle"
-        },
-        opacity: {
-          value: 0.6
-        },
-        size: {
-          value: 3
-        },
-        move: {
-          enable: true,
-          speed: 1
-        },
-        links: {
-          enable: false
-        }
+        number: { value: 45 },
+        color: { value: "#00aaff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.6 },
+        size: { value: 3 },
+        move: { enable: true, speed: 1 },
+        links: { enable: false }
       },
       interactivity: {
         events: {
