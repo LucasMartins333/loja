@@ -2,38 +2,43 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Produto VIP Blood Strike</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produto VIP Blood Strike</title>
   <style>
-    html, body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
       height: 100%;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, sans-serif;
       background: #000;
-      color: #fff;
+      position: relative;
+      overflow-x: hidden;
     }
 
     #particles-js {
       position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       z-index: 0;
-      top: 0;
-      left: 0;
     }
 
     .container {
       position: relative;
       z-index: 1;
-      background: #fff;
+      background-color: #fff;
       color: #000;
-      padding: 16px;
-      border-radius: 15px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-      max-width: 360px;
-      width: 90%;
-      margin: 30px auto;
+      max-width: 95%;
+      width: 360px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.4);
       text-align: center;
     }
 
@@ -41,50 +46,50 @@
       width: 100%;
       border-radius: 12px;
       margin-bottom: 12px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     }
 
     h1 {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       margin-bottom: 10px;
     }
 
     .descricao {
-      font-size: 0.9rem;
+      font-size: 1rem;
       margin-bottom: 12px;
-      color: #333;
+      color: #444;
     }
 
     .preco {
       font-size: 1.8rem;
-      font-weight: bold;
       color: #28a745;
+      font-weight: bold;
       margin-bottom: 12px;
     }
 
     .email-box {
-      background: #f0f0f0;
-      padding: 8px;
-      margin: 10px 0 16px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 0.9rem;
-      color: #000;
+      background: #eee;
       border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      font-weight: bold;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+      word-break: break-word;
     }
 
     .btn {
       display: block;
-      margin: 10px auto;
-      padding: 10px 16px;
-      font-size: 0.9rem;
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
       border: none;
       border-radius: 8px;
-      cursor: pointer;
-      width: 100%;
-      transition: background 0.3s;
       text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
       color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
     }
 
     .btn-whats {
@@ -103,20 +108,18 @@
       background-color: #4e5ad4;
     }
 
-    /* Responsivo ainda menor */
-    @media (max-width: 380px) {
+    @media (max-width: 400px) {
       .container {
-        padding: 12px;
-        max-width: 320px;
-        margin: 20px auto;
+        width: 90%;
+        padding: 16px;
       }
 
       h1 {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
       }
 
       .descricao, .email-box, .btn {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
       }
 
       .preco {
@@ -126,38 +129,43 @@
   </style>
 </head>
 <body>
+
   <div id="particles-js"></div>
 
   <div class="container">
-    <img src="https://cdn.discordapp.com/attachments/1309691694303678614/1353535519836999831/Screenshot_2025-03-23-22-04-44-264_com.png?ex=67fc5faf&is=67fb0e2f&hm=69dfb0900cb4e6c94a6219540191bfad5d7f98b5ec5f01d65e04738270495e93&" alt="Produto VIP Blood Strike" class="product-image">
-
+    <img class="product-image" src="https://cdn.discordapp.com/attachments/1309691694303678614/1351351505608769618/Screenshot_2025-03-17-11-13-31-972_com.dualspace.multispace.android.jpg?ex=67fb0529&is=67f9b3a9&hm=959b7d61094c0efefff3fc745bdd6a9c74b2386d33d853348922f0a041b53843&" alt="Produto VIP Blood Strike">
     <h1>🔥 Produto VIP para Blood Strike</h1>
     <p class="descricao">Ative os melhores modos com apenas um clique!</p>
     <div class="preco">R$ 25,00</div>
-
     <p><strong>Pagamento via Pix</strong> (e-mail chave):</p>
     <div class="email-box">wendellxiter@gmail.com</div>
-
-    <a href="https://wa.link/4mqmft" class="btn btn-whats" target="_blank">📲 Fale comigo no WhatsApp</a>
-    <a href="https://discord.gg/BsKTCm4dEr" class="btn btn-discord" target="_blank">🎮 Entrar no Discord</a>
+    <a href="https://wa.link/4mqmft" target="_blank" class="btn btn-whats">📲 Fale comigo no WhatsApp</a>
+    <a href="https://discord.gg/BsKTCm4dEr" target="_blank" class="btn btn-discord">🎮 Entrar no Discord</a>
   </div>
 
-  <!-- tsParticles CDN -->
+  <!-- Partículas -->
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
   <script>
     tsParticles.load("particles-js", {
-      fullScreen: { enable: false },
       background: {
         color: "#000"
       },
+      fullScreen: { enable: false },
       particles: {
-        number: { value: 45 },
+        number: { value: 60 },
         color: { value: "#00aaff" },
         shape: { type: "circle" },
-        opacity: { value: 0.6 },
-        size: { value: 3 },
-        move: { enable: true, speed: 1 },
-        links: { enable: false }
+        opacity: { value: 0.4 },
+        size: { value: 2 },
+        move: {
+          enable: true,
+          speed: 1.2,
+          direction: "none",
+          outMode: "bounce"
+        },
+        links: {
+          enable: false
+        }
       },
       interactivity: {
         events: {
@@ -165,6 +173,9 @@
             enable: true,
             mode: "repulse"
           }
+        },
+        modes: {
+          repulse: { distance: 80 }
         }
       }
     });
