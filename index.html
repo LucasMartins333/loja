@@ -45,7 +45,7 @@
       margin-bottom: 20px;
     }
 
-    h1 {
+    h1, h2 {
       font-size: 1.6rem;
       margin-bottom: 12px;
     }
@@ -112,30 +112,49 @@
       background: #fff;
     }
 
-    .demo h2 {
-      font-size: 1.4rem;
-      margin-bottom: 16px;
-      color: #111;
-    }
-
     video {
       width: 100%;
       border-radius: 12px;
       margin-bottom: 20px;
     }
 
-    ul.features {
+    .functions {
       text-align: left;
-      margin: 0 auto;
-      max-width: 300px;
-      padding-left: 20px;
-      list-style-type: "✅ ";
+      margin-top: 20px;
     }
 
-    ul.features li {
-      margin-bottom: 10px;
-      font-size: 1rem;
-      color: #222;
+    .functions ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .functions li {
+      padding: 6px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .scroll-notify {
+      background: #ffcc00;
+      color: #000;
+      text-align: center;
+      padding: 12px;
+      font-weight: bold;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+
+    .btn-pagamento {
+      background: #007bff;
+      margin-top: 20px;
+    }
+
+    .btn-pagamento:hover {
+      background: #0056b3;
     }
 
     @media (max-width: 480px) {
@@ -152,21 +171,19 @@
       .preco {
         font-size: 1.6rem;
       }
-
-      ul.features {
-        padding-left: 15px;
-      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Canvas de partículas -->
   <div id="particles-js"></div>
 
-  <!-- Conteúdo principal -->
+  <!-- NOTIFICAÇÃO -->
+  <div class="scroll-notify">⬇️ ROLE PARA BAIXO PARA COMPRAR ⬇️</div>
+
+  <!-- PRODUTO -->
   <div class="container">
-    <img class="product-image" src="https://cdn.discordapp.com/attachments/1349832525031411742/1360847914603118643/Novo_Projeto_4.png?ex=67fc9be2&is=67fb4a62&hm=49afc737cb6873a7e505ab3f569270803f212cee9cac614181acb6d449bcfaec&" alt="Produto VIP Blood Strike">
+    <img class="product-image" src="https://cdn.discordapp.com/attachments/1349832525031411742/1360847914603118643/Novo_Projeto_4.png" alt="Produto VIP Blood Strike">
 
     <h1>🔥 Produto VIP para Blood Strike</h1>
     <p class="descricao">Ative os melhores modos com apenas um clique!</p>
@@ -174,41 +191,53 @@
 
     <p><strong>Pagamento via Pix</strong> (e-mail chave):</p>
     <div class="email-box">wendellxiter@gmail.com</div>
-
-    <a href="https://wa.link/4mqmft" target="_blank" class="btn btn-whats">📲 Fale comigo no WhatsApp</a>
-    <a href="https://discord.gg/BsKTCm4dEr" target="_blank" class="btn btn-discord">🎮 Entrar no Discord</a>
   </div>
 
-  <!-- Seção de demonstração -->
+  <!-- CONTATO -->
+  <div class="container">
+    <h2>📞 Meios de Contato</h2>
+    <a href="https://wa.link/4mqmft" target="_blank" class="btn btn-whats">📲 WhatsApp</a>
+    <a href="https://discord.gg/BsKTCm4dEr" target="_blank" class="btn btn-discord">🎮 Discord</a>
+  </div>
+
+  <!-- DEMONSTRAÇÃO -->
   <div class="container demo">
     <h2>🎥 Demonstração</h2>
     <video controls>
-      <source src="https://cdn.discordapp.com/attachments/1242746665794928641/1309637432928505887/Screenrecorder-2024-11-22-18-47-43-129.mp4?ex=67fc31e7&is=67fae067&hm=50c27cfa2ea400a7a6a3a8b398aae28917069cc271ab85c12128d946a9235f3b&" type="video/mp4">
+      <source src="https://cdn.discordapp.com/attachments/1242746665794928641/1309637432928505887/Screenrecorder-2024-11-22-18-47-43-129.mp4" type="video/mp4">
       Seu navegador não suporta a reprodução de vídeo.
     </video>
 
-    <h2>🛠️ Funções do Mod Menu</h2>
-    <ul class="features">
-      <li>Aimbot</li>
-      <li>No Recoil</li>
-      <li>AimFOV Customizado</li>
-      <li>Wallhack</li>
-      <li>Speed Hack</li>
-      <li>ESP Inimigos</li>
-      <li>Auto Headshot</li>
-      <li>Modo Fantasma</li>
-      <li>Anti-Ban</li>
-    </ul>
+    <div class="functions">
+      <h3>🛠️ Funções do Mod Menu:</h3>
+      <ul>
+        <li>Aimbot</li>
+        <li>No Recoil</li>
+        <li>AimFOV Personalizado</li>
+        <li>Speed Hack</li>
+        <li>WallHack</li>
+        <li>Radar Hack</li>
+        <li>Auto Headshot</li>
+        <li>Skin Unlock</li>
+        <li>Modo Fantasma</li>
+        <li>Anti-Ban</li>
+      </ul>
+    </div>
   </div>
 
-  <!-- Script partículas -->
+  <!-- BOTÃO PAGAMENTO -->
+  <div class="container">
+    <a href="https://wa.link/4mqmft" target="_blank" class="btn btn-pagamento">💸 PAGAR AGORA VIA WHATSAPP</a>
+  </div>
+
+  <!-- PARTICULAS -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
     particlesJS("particles-js", {
       particles: {
         number: { value: 60, density: { enable: true, value_area: 800 } },
         color: { value: "#00BFFF" },
-        shape: { type: "circle", stroke: { width: 0, color: "#000" } },
+        shape: { type: "circle" },
         opacity: { value: 0.5 },
         size: { value: 3 },
         line_linked: {
@@ -243,5 +272,6 @@
       retina_detect: true
     });
   </script>
+
 </body>
 </html>
